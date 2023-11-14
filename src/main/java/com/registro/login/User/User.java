@@ -38,7 +38,7 @@ public class User implements UserDetails{
 	Role role;
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return List.of(new SimpleGrantedAuthority(role.name()));
+		return List.of(new SimpleGrantedAuthority((role.name())));
 	}
 
 	@Override
@@ -57,20 +57,6 @@ public class User implements UserDetails{
 	public boolean isEnabled() {
 		return true;
 	}
-	
-	private static final long serialVersionUID = 1L;
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
+
 }
